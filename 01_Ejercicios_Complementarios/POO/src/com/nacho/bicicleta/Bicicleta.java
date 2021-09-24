@@ -1,12 +1,12 @@
-package com.nacho;
+package com.nacho.bicicleta;
 
 public class Bicicleta {
 
-    private double velocidadActual;
+    private int velocidadActual;
     private int platoActual;
     private int pinonActual;
 
-    public Bicicleta(double velocidadActual, int platoActual, int pinonActual) {
+    public Bicicleta(int velocidadActual, int platoActual, int pinonActual) {
         this.velocidadActual = velocidadActual;
         this.platoActual = platoActual;
         this.pinonActual = pinonActual;
@@ -39,11 +39,11 @@ public class Bicicleta {
     Ejercicio 4 : Getters and Setters
          */
 
-    public double getVelocidadActual() {
+    public int getVelocidadActual() {
         return velocidadActual;
     }
 
-    public void setVelocidadActual(double velocidadActual) {
+    public void setVelocidadActual(int velocidadActual) {
         this.velocidadActual = velocidadActual;
     }
 
@@ -61,12 +61,5 @@ public class Bicicleta {
 
     public void setPinonActual(int pinonActual) {
         this.pinonActual = pinonActual;
-    }
-}
-
-class Main2 {
-
-    public static void main(String[] args) {
-        // write your code here
     }
 }
