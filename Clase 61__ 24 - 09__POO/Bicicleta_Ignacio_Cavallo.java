@@ -40,6 +40,33 @@ public class Bicicleta {
         this.platoActual = 1;
     }
 
+    /*
+    Ejercicio 4 : Getters and Setters
+         */
+
+    public double getVelocidadActual() {
+        return velocidadActual;
+    }
+
+    public void setVelocidadActual(double velocidadActual) {
+        this.velocidadActual = velocidadActual;
+    }
+
+    public int getPlatoActual() {
+        return platoActual;
+    }
+
+    public void setPlatoActual(int platoActual) {
+        this.platoActual = platoActual;
+    }
+
+    public int getPinonActual() {
+        return pinonActual;
+    }
+
+    public void setPinonActual(int pinonActual) {
+        this.pinonActual = pinonActual;
+    }
 }
 
 class Main2 {

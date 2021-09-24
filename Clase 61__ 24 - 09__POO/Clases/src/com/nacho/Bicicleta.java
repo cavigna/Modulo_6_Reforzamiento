@@ -27,7 +27,6 @@ public class Bicicleta {
 
     public void cambiarPiñon(int piñon){this.pinonActual = piñon;}
 
-
     // Ejercicio 2
 
     public void cambiarPlato(){this.platoActual = 1;}
@@ -41,6 +40,38 @@ public class Bicicleta {
         this.platoActual = 1;
     }
 
+    /*
+    Ejercicio 4 : Getters and Setters
+         */
+
+    public double getVelocidadActual() {
+        return velocidadActual;
+    }
+
+    public void setVelocidadActual(double velocidadActual) {
+        this.velocidadActual = velocidadActual;
+    }
+
+    public int getPlatoActual() {
+        return platoActual;
+    }
+
+    public void setPlatoActual(int platoActual) {
+        this.platoActual = platoActual;
+    }
+
+    public int getPinonActual() {
+        return pinonActual;
+    }
+
+    public void setPinonActual(int pinonActual) {
+        this.pinonActual = pinonActual;
+    }
 }
 
+class Main2 {
 
+    public static void main(String[] args) {
+        // write your code here
+    }
+}
