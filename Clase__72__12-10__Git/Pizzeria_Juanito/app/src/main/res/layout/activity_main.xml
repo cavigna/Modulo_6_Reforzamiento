@@ -13,96 +13,129 @@
         android:text="Pizzería Juanito"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.009" />
 
     <EditText
         android:id="@+id/editTextNombre"
         android:layout_width="347dp"
         android:layout_height="49dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Ingrese su nombre completo"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/radioButtonMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <RadioButton
-        android:id="@+id/radioButtonSmall"
-        android:layout_width="wrap_content"
+        android:id="@+id/radioButtonMedium"
+        android:layout_width="158dp"
         android:layout_height="wrap_content"
-        android:text="RadioButton"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="211dp" />
+        android:layout_marginBottom="15dp"
+        android:text="Mediana : $3.000"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtoLarge"
+        app:layout_constraintEnd_toEndOf="@+id/radioButtoLarge" />
 
     <RadioButton
-        android:id="@+id/radioButtonMedium"
-        android:layout_width="wrap_content"
+        android:id="@+id/radioButtonSmall"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="RadioButton"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="211dp" />
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="31dp"
+        android:text="Pequeña : $1.500"
+        app:layout_constraintEnd_toStartOf="@+id/radioButtonMedium"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
 
     <RadioButton
         android:id="@+id/radioButtoLarge"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="RadioButton"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="211dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="32dp"
+        android:text="Familiar: $5.000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonSmall" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxCarne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="288dp" />
+        android:layout_marginTop="20dp"
+        android:text="Carne: $400"
+        app:layout_constraintStart_toStartOf="@+id/radioButtoLarge"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtoLarge" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/checkBoxTocino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="354dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        android:text="Tocino: $450"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxChoclo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/checkBoxTomate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="288dp" />
+        android:layout_marginTop="16dp"
+        android:text="Tomate : $200"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxChamp"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxChamp" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/checkBoxChoclo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="362dp" />
+        android:layout_marginTop="16dp"
+        android:text="Choclo:  $200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAceituna" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/checkBoxAceituna"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="432dp" />
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="29dp"
+        android:text="Aceituna:  $250"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTomate" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/checkBoxChamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="440dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="Champiñon: $250"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtoLarge" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPeperoni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Peperoni: $200"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxCarne"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCarne" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="233dp"
+        android:layout_height="42dp"
+        android:text="Aceptar"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="545dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
