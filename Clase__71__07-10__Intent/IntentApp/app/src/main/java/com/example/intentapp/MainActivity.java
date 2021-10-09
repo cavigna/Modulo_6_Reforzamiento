@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 if(passwordString.isEmpty()) password.setError("Falta contraseña");
 
                 Intent intento = new Intent(getApplicationContext(), ResumenActivity.class);
-
+//
                 Registro registro = new Registro(nombreString, apellidoString,
                         emailString, passwordString);
 

@@ -20,7 +20,10 @@ public class ResumenActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        //Registro registro = (Registro) getIntent().getSerializableExtra("registro");
         Registro registro = (Registro) getIntent().getSerializableExtra("registro");
+
+        
 
         TextView tvnombre = binding.textView;
         TextView tvapellido = binding.textView;
