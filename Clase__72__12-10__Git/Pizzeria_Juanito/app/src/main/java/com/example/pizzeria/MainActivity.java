@@ -17,6 +17,15 @@ import com.example.pizzeria.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
+    private CheckBox cbCarne;
+    private CheckBox cbPepe;
+    private CheckBox cbTocino;
+    private CheckBox cbChamp;
+    private CheckBox cbTomate;
+    private CheckBox cbChoclo;
+    private CheckBox cbAceituna;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,52 +42,75 @@ public class MainActivity extends AppCompatActivity {
         RadioButton rbMedium = binding.radioButtonMedium;
         RadioButton rbXl = binding.radioButtoLarge;
 
-        CheckBox cbCarne = binding.checkBoxCarne;
-        CheckBox cbPepe = binding.checkBoxPeperoni;
-        CheckBox cbTocino = binding.checkBoxTocino;
-        CheckBox cbChamp   = binding.checkBoxChamp;
-        CheckBox cbTomate = binding.checkBoxTomate;
-        CheckBox cbChoclo = binding.checkBoxChoclo;
-        CheckBox cbAceituna = binding.checkBoxAceituna;
+        this.cbCarne = binding.checkBoxCarne;
+        cbPepe = binding.checkBoxPeperoni;
+        cbTocino = binding.checkBoxTocino;
+        cbChamp = binding.checkBoxChamp;
+        cbTomate = binding.checkBoxTomate;
+        cbChoclo = binding.checkBoxChoclo;
+        cbAceituna = binding.checkBoxAceituna;
 
         Button boton = binding.button;
 
-        Pizza prueba  = new Pizza("xl");
+        Pizza prueba = new Pizza("xl");
         prueba.setTieneCarne();
         prueba.precioTotal();
         Log.i("total",
                 String.valueOf(prueba.getTotal())
-                );
+        );
+
+        String nombre = editTextNombre.getText().toString();
+
+        boolean sizeSmall = rbSmall.isChecked();
+        boolean sizeMedium = rbMedium.isChecked();
+        boolean sizeLarge = rbXl.isChecked();
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre = editTextNombre.getText().toString();
 
-                boolean sizeSmall = rbSmall.isChecked();
-                boolean sizeMedium = rbMedium.isChecked();
-                boolean sizeLarge = rbXl.isChecked();
 
-                if(nombre.isEmpty()) {
+                Pizza pizza = null;
+                if (nombre.isEmpty()) {
                     editTextNombre.setError("Agrege Su Nombre");
+
+                }
+                if ((sizeSmall || sizeMedium || sizeLarge) && (!nombre.isEmpty())) {
+
+                    if (sizeSmall) {
+                        pizza = new Pizza("s");
+                        
+                    } else if (sizeMedium) {
+                        pizza = new Pizza("m");
+                    } else if (sizeLarge) {
+                        pizza = new Pizza("xl");
+                    }
+                    makePizza(pizza);
+
+                    
+//
+                } else {
                     Toast.makeText(getApplicationContext(),
                             "Tiene que Seleccionar un tamaño", Toast.LENGTH_LONG).show();
                 }
-                if((sizeSmall || sizeMedium || sizeLarge) && (!nombre.isEmpty()) ) {
-//                    Pizza pizza =  new Pizza()
-                }
 
-                Log.i("juanito", String.valueOf(radioGroup.getCheckedRadioButtonId()));
-
-
-
-
+                Log.i("pizza",String.valueOf(pizza.getTotal()));
 
 
             }
         });
 
 
+    }
+
+    private void makePizza(Pizza pizza){
+        if(cbCarne.isChecked()) pizza.setTieneCarne();
+        if(cbPepe.isChecked()) pizza.setTienePeperoni();
+        if(cbTocino.isChecked()) pizza.setTieneTocino();
+        if(cbTomate.isChecked()) pizza.setTieneTomate();
+        if(cbChamp.isChecked()) pizza.setTieneChamp();
+        if(cbChoclo.isChecked()) pizza.setTieneChoclo();
+        if(cbAceituna.isChecked()) pizza.setTieneAceituna();
 
     }
 }
