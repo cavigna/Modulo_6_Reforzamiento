@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Pizza implements Serializable {
 
     private String size;
+    private String cliente;
     protected int total = 0;
     private int precioSize = 0;
 
@@ -36,6 +37,10 @@ public class Pizza implements Serializable {
     private static final int PRECIOTOMATE = 200;
     private static final int PRECIOCHOCLO = 200;
     private static final int PRECIOACEITUNA = 250;
+
+    public Pizza(){
+
+    }
 
     public Pizza(String size) {
         this.size = size;
