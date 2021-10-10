@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if ((sizeSmall || sizeMedium || sizeLarge) && (!nombre.isEmpty())) {
 
-                   Pizza pizza =   doPizza();
+                   Pizza pizza =   doPizza(nombre);
                     Intent intento = new Intent(getApplicationContext(),
                             Pedido.class);
                     intento.putExtra("pizza", pizza);
@@ -110,25 +110,25 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private Pizza doPizza(){
+    private Pizza doPizza(String nombreCliente){
         boolean sizeSmall = rbSmall.isChecked();
         boolean sizeMedium = rbMedium.isChecked();
         boolean sizeLarge = rbXl.isChecked();
         Pizza pizza = null;
 
         if (sizeSmall) {
-             pizza = new Pizza("s");
+             pizza = new Pizza("s", nombreCliente);
              makePizza(pizza);
              return pizza;
 
         } else if (sizeMedium) {
-             pizza = new Pizza("m");
+             pizza = new Pizza("m", nombreCliente);
              makePizza(pizza);
              return pizza;
 
 
         } else if (sizeLarge) {
-            pizza = new Pizza("xl");
+            pizza = new Pizza("xl", nombreCliente);
             makePizza(pizza);
             return pizza;
         }

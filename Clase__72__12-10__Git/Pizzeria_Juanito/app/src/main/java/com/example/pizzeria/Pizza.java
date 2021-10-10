@@ -42,8 +42,9 @@ public class Pizza implements Serializable {
 
     }
 
-    public Pizza(String size) {
+    public Pizza(String size, String cliente) {
         this.size = size;
+        this.cliente = cliente;
         precioPorSize(size);
         sumartotal();
 
@@ -103,6 +104,10 @@ public class Pizza implements Serializable {
 
 
     /* GETTERS  AND SETTERS */
+
+    public String getCliente() {
+        return cliente;
+    }
 
     public int getPrecioSize() {
         return precioSize;
