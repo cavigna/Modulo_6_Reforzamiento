@@ -11,6 +11,7 @@ import com.example.pizzeria.databinding.ActivityPedidoBinding;
 public class Pedido extends AppCompatActivity {
     ActivityPedidoBinding binding;
     TextView tvNombreCliente;
+    TextView tvDetalle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +21,17 @@ public class Pedido extends AppCompatActivity {
         setContentView(view);
 
         Pizza pizza = (Pizza) getIntent().getSerializableExtra("pizza");
-        tvNombreCliente =  binding.tvNombreCliente;
 
-        tvNombreCliente.setText(pizza.getCliente());
+        String  saludo = pizza.getCliente() +", tu pizza de tamaño " + pizza.mapSize() +
+                " está en camino";
+        tvNombreCliente =  binding.tvNombreCliente;
+        tvDetalle  = binding.tvDetalle;
+
+
+        tvNombreCliente.setText(saludo);
+        tvDetalle.setText(pizza.toString());
+
     }
 }
+
+//tvNombreCliente.setText(String.valueOf(pizza.getTotal()));

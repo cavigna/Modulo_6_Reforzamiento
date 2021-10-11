@@ -1,6 +1,7 @@
 package com.example.pizzeria;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Pizza implements Serializable {
 
@@ -101,6 +102,47 @@ public class Pizza implements Serializable {
                 precioSize =  0;
         }
     }
+
+    public String mapSize(){
+        String respuesta;
+        switch (this.size){
+            case "s":
+                respuesta = "pequeña";
+                break;
+
+            case "m":
+                respuesta = "mediana";
+                break;
+            default:
+                respuesta = "Familiar";
+        }
+        return respuesta;
+    }
+
+
+
+    @Override
+    public String toString(){
+        boolean agregados[] = {this.tieneCarne, this.tienePeperoni, this.tieneTocino,
+                this.tieneChoclo, this.tieneChamp,this.tieneTomate, this.tieneAceituna};
+
+        //boolean tieneAgregados = Arrays.asList(agregados).stream().allMatch(val->val == false);
+
+                        String respuesta = "Pizza " + mapSize() +": $"
+                 + this.precioSize +   System.lineSeparator();
+
+
+        if (this.tieneCarne) respuesta   += "Carne:               $" + PRECIOCARNE + System.lineSeparator();
+        if(this.tienePeperoni) respuesta += "Peperoni:          $" + PRECIOPEPE + System.lineSeparator();
+        if(this.tieneTocino) respuesta +=   "Tocino:              $" + PRECIOTOCINO + System.lineSeparator();
+        if(this.tieneChoclo) respuesta +=   "Choclo:              $" + PRECIOCHOCLO + System.lineSeparator();
+        if(this.tieneChamp) respuesta +=    "Champiñon:           $" + PRECIOCHAMP + System.lineSeparator();
+        if(this.tieneAceituna) respuesta +=  "Aceituna:           $" + PRECIOCHAMP + System.lineSeparator();
+        if(this.tieneTomate) respuesta +=    "Tomate:             $" + PRECIOCHAMP + System.lineSeparator();
+
+        return respuesta;
+    }
+
 
 
     /* GETTERS  AND SETTERS */

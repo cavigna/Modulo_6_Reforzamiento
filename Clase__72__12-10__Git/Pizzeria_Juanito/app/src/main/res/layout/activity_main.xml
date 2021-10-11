@@ -8,22 +8,24 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="409dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Pizzería Juanito"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNombre"
         android:layout_width="347dp"
         android:layout_height="49dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="Ingrese su nombre completo"
         android:inputType="textPersonName"
@@ -35,9 +37,11 @@
         android:id="@+id/checkBoxCarne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="113dp"
         android:text="Carne: $400"
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxChamp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -46,28 +50,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="108dp"
         android:text="Tocino: $450"
-        app:layout_constraintBottom_toTopOf="@+id/checkBoxChoclo"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxAceituna"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPeperoni" />
 
     <CheckBox
         android:id="@+id/checkBoxTomate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="36dp"
         android:text="Tomate : $200"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxChamp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxChamp" />
 
     <CheckBox
         android:id="@+id/checkBoxChoclo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="143dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="150dp"
         android:text="Choclo:  $200"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxAceituna" />
 
@@ -85,27 +93,33 @@
         android:id="@+id/checkBoxChamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="232dp"
         android:text="Champiñon: $250"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxCarne"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <CheckBox
         android:id="@+id/checkBoxPeperoni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="94dp"
         android:text="Peperoni: $200"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxCarne"
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxTomate"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxCarne" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="233dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="89dp"
         android:text="Aceptar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxChoclo" />
@@ -114,16 +128,13 @@
         android:id="@+id/radioGroup"
         android:layout_width="329dp"
         android:layout_height="149dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="41dp"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/checkBoxChamp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombre"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombre">
 
         <RadioButton
             android:id="@+id/radioButtonSmall"
