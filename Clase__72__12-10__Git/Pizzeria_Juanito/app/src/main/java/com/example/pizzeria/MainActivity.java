@@ -79,24 +79,35 @@ public class MainActivity extends AppCompatActivity {
                 boolean sizeLarge = rbXl.isChecked();
 
 
+
+
+
                 if (nombre.isEmpty()) {
                     editTextNombre.setError("Agrege Su Nombre");
 
                 }
-                if ((sizeSmall || sizeMedium || sizeLarge) && (!nombre.isEmpty())) {
+                else if (!sizeSmall && !sizeMedium && !sizeLarge) {
+                    Toast.makeText(getApplicationContext(),
+                            "Tiene que Seleccionar un tamaño", Toast.LENGTH_LONG).show();
 
-                   Pizza pizza =   doPizza(nombre);
+
+                }else if((sizeSmall || sizeMedium || sizeLarge) && (!nombre.isEmpty())){
+
+                    Pizza pizza =   doPizza(nombre);
                     Intent intento = new Intent(getApplicationContext(),
                             Pedido.class);
                     intento.putExtra("pizza", pizza);
                     startActivity(intento);
+                }
 
 
-                    Log.i("juanito",String.valueOf(pizza.getTotal()));
 
-                } else {
-                    Toast.makeText(getApplicationContext(),
-                            "Tiene que Seleccionar un tamaño", Toast.LENGTH_LONG).show();
+
+                else {
+
+
+
+//                    Log.i("juanito",String.valueOf(pizza.getTotal()));
                 }
 
 

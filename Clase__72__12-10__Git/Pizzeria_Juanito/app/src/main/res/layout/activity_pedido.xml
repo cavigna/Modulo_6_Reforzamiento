@@ -55,10 +55,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="58dp"
-        android:text="Agregados"
+        android:layout_marginTop="28dp"
+        android:text="TOTAL"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDetalle" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvT"
+        app:layout_constraintStart_toEndOf="@+id/tvT" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

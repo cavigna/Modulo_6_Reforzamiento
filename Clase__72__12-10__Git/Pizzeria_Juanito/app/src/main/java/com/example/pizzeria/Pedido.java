@@ -22,14 +22,14 @@ public class Pedido extends AppCompatActivity {
 
         Pizza pizza = (Pizza) getIntent().getSerializableExtra("pizza");
 
-        String  saludo = pizza.getCliente() +", tu pizza de tamaño " + pizza.mapSize() +
-                " está en camino";
+        String  saludo = pizza.getCliente() +", tu pizza está en camino";
         tvNombreCliente =  binding.tvNombreCliente;
         tvDetalle  = binding.tvDetalle;
-
+        TextView tvTotal =  binding.tvTotal;
 
         tvNombreCliente.setText(saludo);
         tvDetalle.setText(pizza.toString());
+        tvTotal.setText(new StringBuilder().append("$").append(pizza.getTotal()).toString());
 
     }
 }
