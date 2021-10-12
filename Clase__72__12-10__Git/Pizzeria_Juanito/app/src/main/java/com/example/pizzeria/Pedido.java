@@ -22,7 +22,9 @@ public class Pedido extends AppCompatActivity {
 
         Pizza pizza = (Pizza) getIntent().getSerializableExtra("pizza");
 
-        String  saludo = pizza.getCliente() +", tu pizza está en camino";
+        String  saludo = pizza.getCliente() +", tu pizza está en camino  "+ getEmojiByUnicode(0x1F681)+ "   "
+                + getEmojiByUnicode(0x1F355)
+                ;
         tvNombreCliente =  binding.tvNombreCliente;
         tvDetalle  = binding.tvDetalle;
         TextView tvTotal =  binding.tvTotal;
@@ -31,6 +33,10 @@ public class Pedido extends AppCompatActivity {
         tvDetalle.setText(pizza.toString());
         tvTotal.setText(new StringBuilder().append("$").append(pizza.getTotal()).toString());
 
+    }
+
+    public String getEmojiByUnicode(int unicode){
+        return new String(Character.toChars(unicode));
     }
 }
 

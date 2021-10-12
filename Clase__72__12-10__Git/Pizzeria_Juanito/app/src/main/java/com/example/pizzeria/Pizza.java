@@ -141,8 +141,8 @@ public class Pizza implements Serializable {
         if(this.tieneTocino) respuesta +=   "Tocino:                     $" + PRECIOTOCINO + System.lineSeparator();
         if(this.tieneChoclo) respuesta +=   "Choclo:                     $" + PRECIOCHOCLO + System.lineSeparator();
         if(this.tieneChamp) respuesta +=    "Champiñon:             $" + PRECIOCHAMP + System.lineSeparator();
-        if(this.tieneAceituna) respuesta +=  "Aceituna:                  $" + PRECIOCHAMP + System.lineSeparator();
-        if(this.tieneTomate) respuesta +=    "Tomate:                    $" + PRECIOCHAMP + System.lineSeparator();
+        if(this.tieneAceituna) respuesta +=  "Aceituna:                  $" + PRECIOACEITUNA + System.lineSeparator();
+        if(this.tieneTomate) respuesta +=    "Tomate:                    $" + PRECIOTOMATE + System.lineSeparator();
 
         return respuesta;
     }
