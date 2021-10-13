@@ -1,5 +1,7 @@
 package com.example.listarecicladora.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,8 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.listarecicladora.DetalleActivity;
 import com.example.listarecicladora.R;
 import com.example.listarecicladora.databinding.ItemRowBinding;
 import com.example.listarecicladora.model.Producto;
@@ -18,9 +22,11 @@ import java.util.ArrayList;
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyViewHolder> {
 
     private ArrayList<Producto> listadoProducto;
+    private Context contexto;
 
-    public ProductoAdapter(ArrayList<Producto> listadoProducto){
+    public ProductoAdapter(ArrayList<Producto> listadoProducto, Context contexto){
         this.listadoProducto =  listadoProducto;
+        this.contexto = contexto;
     }
 
     @NonNull
@@ -45,6 +51,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder{
         ItemRowBinding binding;
         private TextView tvIdrow, tvNombreRow, tvPrecioRow;
+        private CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,11 +59,24 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyView
             tvIdrow =  binding.tvIDRow;
             tvNombreRow = binding.tvNombreRow;
             tvPrecioRow =  binding.tvPrecioROw;
+            cardView = binding.card;
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intento =  new Intent(contexto, DetalleActivity.class);
+                    intento.putExtra("producto", ProductoAdapter.this.getItemViewType(getLayoutPosition()));
+
+                    contexto.startActivity(intento);
+                }
+            });
+
+
         }
 
         public void unirDatos(Producto producto){
-            tvIdrow.setText(producto.getId());
-            tvNombreRow.setText(producto.getNombre());
+            tvIdrow.setText(String.valueOf(producto.getId()));
+            tvNombreRow.setText(producto.getNombre().toString());
             tvPrecioRow.setText(String.valueOf(producto.getPrecio()));
         }
     }

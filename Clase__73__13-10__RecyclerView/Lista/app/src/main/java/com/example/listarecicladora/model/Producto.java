@@ -14,6 +14,10 @@ public class Producto implements Serializable {
         this.precio = precio;
     }
 
+    public Producto() {
+
+    }
+
     public  int precioConIva(){
         return (int) (this.precio * 1.19);
     }
