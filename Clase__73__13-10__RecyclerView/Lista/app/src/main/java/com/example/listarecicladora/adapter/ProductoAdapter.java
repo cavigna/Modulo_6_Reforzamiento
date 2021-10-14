@@ -40,6 +40,11 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.unirDatos(listadoProducto.get(position));
+        holder.cardView.setOnClickListener(view -> {
+            Intent intento =  new Intent(contexto, DetalleActivity.class);
+            intento.putExtra("producto", listadoProducto.get(position));
+            contexto.startActivity(intento);
+        });
     }
 
     @Override
@@ -61,15 +66,16 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyView
             tvPrecioRow =  binding.tvPrecioROw;
             cardView = binding.card;
 
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intento =  new Intent(contexto, DetalleActivity.class);
-                    intento.putExtra("producto", ProductoAdapter.this.getItemViewType(getLayoutPosition()));
-
-                    contexto.startActivity(intento);
-                }
-            });
+//            cardView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intento =  new Intent(contexto, DetalleActivity.class);
+//                    //intento.putExtra("producto", ProductoAdapter.this.getItemViewType(getLayoutPosition()));
+//                    intento.putExtra("producto", listadoProducto.get(getAdapterPosition()));
+//
+//                    contexto.startActivity(intento);
+//                }
+//            });
 
 
         }

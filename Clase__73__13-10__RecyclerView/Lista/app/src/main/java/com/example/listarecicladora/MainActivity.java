@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.listarecicladora.databinding.ActivityMainBinding;
 import com.example.listarecicladora.model.Producto;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private TextInputEditText etID, etNombre, etPrecio;
     private TextInputLayout ilID, ilNombre,ilPrecio;
+    private EditText editTextID;
     private Button boton;
     private Producto producto = new Producto();
     static ArrayList<Producto> listaProducto = new ArrayList<>();
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         ilNombre =  binding.tinombre;
         ilPrecio = binding.tiprecio;
 
+        editTextID = binding.editTextNumber;
+
         listaProducto.add(new Producto(1, "producto uno", 123));
         listaProducto.add(new Producto(2, "producto dos", 456));
         listaProducto.add(new Producto(3, "producto tres", 789));
@@ -47,18 +51,26 @@ public class MainActivity extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
 
 
-            String id = Objects.requireNonNull(ilID.getEditText()).getText().toString();
-            String nombre = Objects.requireNonNull(ilNombre.getEditText()).getText().toString();
-            String precio = Objects.requireNonNull(ilPrecio.getEditText()).getText().toString();
-
 
             @Override
             public void onClick(View view) {
-                producto.setId(conversorNumerico(id));
+
+                String id = ilID.getEditText().getText().toString();
+                String nombre =ilNombre.getEditText().getText().toString();
+                String precio = ilPrecio.getEditText().getText().toString();
+
+                try {
+                    producto.setId(Integer.parseInt(id));
+                }catch (NumberFormatException ex){
+                   editTextID.setError(getString(Integer.parseInt(ex.getMessage())));
+                }
+
+
+
                 producto.setNombre(nombre);
                 producto.setPrecio(conversorNumerico(precio));
-
-                Intent intento = new Intent(getApplicationContext()
+//
+                Intent intento = new Intent(MainActivity.this
                         , ListadoActivity.class);
                 listaProducto.add(producto);
                 intento.putExtra("listaProducto", listaProducto);
