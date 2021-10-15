@@ -30,6 +30,6 @@
         tools:layout="@layout/fragment_details" >
         <argument
             android:name="producto"
-            app:argType="com.example.ejerciciofragmentado.model.Producto" />
+            app:argType="com.example.ejercicioroom.model.Producto" />
     </fragment>
 </navigation>

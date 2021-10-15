@@ -61,7 +61,7 @@ public class AddFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("listaProducto", listaProducto);
 
-                NavDirections action = AddFragmentDirections.actionAddFragmentToListFragment();
+               // NavDirections action = AddFragmentDirections.actionAddFragmentToListFragment();
                 Navigation.findNavController(view).navigate(R.id.action_addFragment_to_listFragment, bundle);
             }
         });

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ejercicioroom.databinding.FragmentDetailsBinding;
-import com.example.ejercicioroom.model.Producto;
 
 
 public class DetailsFragment extends Fragment {
@@ -19,7 +18,7 @@ public class DetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentDetailsBinding.inflate(inflater, container, false);
 
-        Producto producto = DetailsFragmentArgs.fromBundle(getArguments()).getProducto();
+        com.example.ejercicioroom.model.Producto producto = DetailsFragmentArgs.fromBundle(getArguments()).getProducto();
 
         binding.tvNombre.setText(producto.getNombre());
 

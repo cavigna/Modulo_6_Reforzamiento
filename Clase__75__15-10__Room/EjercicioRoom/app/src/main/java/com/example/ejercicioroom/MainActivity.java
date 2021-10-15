@@ -9,6 +9,8 @@ import android.view.View;
 
 import com.example.ejercicioroom.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     NavController navController;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         assert navHostFragment != null;
         navController = navHostFragment.getNavController();
 
+
+        //ArrayList<Integer> = {1,1,0,1,1};
 
     }
 }
