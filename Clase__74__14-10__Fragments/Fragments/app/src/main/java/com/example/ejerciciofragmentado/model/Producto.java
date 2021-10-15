@@ -1,0 +1,52 @@
+package com.example.ejerciciofragmentado.model;
+
+import java.io.Serializable;
+
+public class Producto implements Serializable {
+
+    private int id;
+    private String nombre;
+    private int precio;
+
+    public Producto(int id, String nombre, int precio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    public Producto() {
+
+    }
+
+    public  int precioConIva(){
+        return (int) (this.precio * 1.19);
+    }
+
+
+
+    /* GETTERS AND SETTERS*/
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+}

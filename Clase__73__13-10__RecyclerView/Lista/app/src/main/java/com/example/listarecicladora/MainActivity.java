@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private TextInputEditText etID, etNombre, etPrecio;
-    private TextInputLayout ilID, ilNombre,ilPrecio;
-    private EditText editTextID;
+    private TextInputLayout ilID, ilNombre, ilPrecio;
     private Button boton;
     private Producto producto = new Producto();
     static ArrayList<Producto> listaProducto = new ArrayList<>();
@@ -35,13 +34,12 @@ public class MainActivity extends AppCompatActivity {
         etID = binding.etid;
         etNombre = binding.etnombre;
         etPrecio = binding.etprecio;
-        boton =  binding.button;
+        boton = binding.button;
 
         ilID = binding.tiid;
-        ilNombre =  binding.tinombre;
+        ilNombre = binding.tinombre;
         ilPrecio = binding.tiprecio;
 
-        editTextID = binding.editTextNumber;
 
         listaProducto.add(new Producto(1, "producto uno", 123));
         listaProducto.add(new Producto(2, "producto dos", 456));
@@ -51,20 +49,15 @@ public class MainActivity extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
 
 
-
             @Override
             public void onClick(View view) {
 
                 String id = ilID.getEditText().getText().toString();
-                String nombre =ilNombre.getEditText().getText().toString();
+                String nombre = ilNombre.getEditText().getText().toString();
                 String precio = ilPrecio.getEditText().getText().toString();
 
-                try {
-                    producto.setId(Integer.parseInt(id));
-                }catch (NumberFormatException ex){
-                   editTextID.setError(getString(Integer.parseInt(ex.getMessage())));
-                }
 
+                producto.setId(Integer.parseInt(id));
 
 
                 producto.setNombre(nombre);
@@ -76,16 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 intento.putExtra("listaProducto", listaProducto);
 
 
-                for(int i= 0; i<listaProducto.size(); i++){
+                for (int i = 0; i < listaProducto.size(); i++) {
                     Log.i("problema", listaProducto.get(i).getNombre());
                 }
 
                 startActivity(intento);
             }
         });
-
-
-
 
 
     }
@@ -97,9 +87,11 @@ public class MainActivity extends AppCompatActivity {
             return numero;
         } catch (NumberFormatException nfe) {
             // Handle the condition when str is not a number.
-        return 0;
+            return 0;
         }
-    };
+    }
+
+    ;
 
 
 }
