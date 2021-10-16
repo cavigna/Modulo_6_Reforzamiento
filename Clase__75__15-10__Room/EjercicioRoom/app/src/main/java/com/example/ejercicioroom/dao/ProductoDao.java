@@ -8,6 +8,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
+import com.example.ejercicioroom.model.MarcaEntity;
 import com.example.ejercicioroom.model.Producto;
 import com.example.ejercicioroom.model.ProductoEntity;
 
@@ -27,5 +28,11 @@ public interface ProductoDao {
 
     @Query("SELECT * FROM producto")
     LiveData<List<ProductoEntity>> selectAllProductos();
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void agregarMarca(MarcaEntity marcaEntity);
+
+    @Delete
+    void elminarMarca(MarcaEntity marcaEntity);
 
 }

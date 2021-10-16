@@ -37,9 +37,6 @@ public class ListFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this).get(ProductoViewModel.class);
 
-        //ArrayList<Producto> listadoProductos = (ArrayList<Producto>)
-         //       getArguments().getSerializable("listaProducto");
-
         recyclerView = binding.recycler;
 
         adapter = new ProductoListAdapter(new ProductoListAdapter.ProductoDiff());

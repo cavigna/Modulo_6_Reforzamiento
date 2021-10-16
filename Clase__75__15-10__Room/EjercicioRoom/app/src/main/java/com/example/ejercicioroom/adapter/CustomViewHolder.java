@@ -29,6 +29,8 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
         tvNombreRow = binding.tvNombreRow;
         tvMarca = binding.tvMarca;
         tvPrecioRow = binding.tvPrecioRow;
+
+        //cardView.setOnClickListener(view -> );
     }
 
 
