@@ -11,7 +11,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="1dp"
         android:gravity="center"
         android:text="Agregar Productos"
@@ -67,7 +67,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiprecio"
+        android:id="@+id/timarca"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -77,6 +77,26 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tinombre">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etmarca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="marca"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiprecio"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timarca">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etprecio"
@@ -94,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="151dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="44dp"
 
         android:layout_marginEnd="166dp"
         android:text="Agregar"

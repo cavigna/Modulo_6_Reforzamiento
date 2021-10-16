@@ -25,7 +25,7 @@ public abstract class BaseDeDatos extends RoomDatabase {
 
     private static final int NUMBER_OF_THREADS = 4;
 
-    static final ExecutorService databaseWriteExecutor =
+    public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
     public static BaseDeDatos getDataBase(final Context context) {

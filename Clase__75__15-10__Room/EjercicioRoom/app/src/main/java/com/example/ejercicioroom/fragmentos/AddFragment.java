@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class AddFragment extends Fragment {
     FragmentAddBinding binding;
-    private TextInputLayout ilID, ilNombre,ilPrecio;
+    private TextInputLayout ilID, ilNombre, ilMarca, ilPrecio;
     private Button boton;
     private Producto producto = new Producto();
     static ArrayList<Producto> listaProducto = new ArrayList<>();
@@ -39,13 +39,25 @@ public class AddFragment extends Fragment {
         ilID = binding.tiid;
         ilNombre =  binding.tinombre;
         ilPrecio = binding.tiprecio;
+        ilMarca =  binding.timarca;
 
 
         boton.setOnClickListener(view1 -> {
 
             String id = ilID.getEditText().getText().toString();
             String nombre = ilNombre.getEditText().getText().toString();
+            String marca = ilMarca.getEditText().getText().toString();
             String precio = ilPrecio.getEditText().getText().toString();
+
+
+            /*
+            if(id.isEmpty()) ilID.setError("Debe Ingresar un ID");
+            if (nombre.isEmpty()) ilNombre.setError("Debe Ingresar un Modelo");
+            if (marca.isEmpty()) ilMarca.setError("Debe Ingresar una Marca");
+            if (precio.isEmpty()) ilPrecio.setError("Debe Ingresar un Precio");
+            */
+
+
 
 
             if(!id.isEmpty() && !nombre.isEmpty() && !precio.isEmpty()) {
