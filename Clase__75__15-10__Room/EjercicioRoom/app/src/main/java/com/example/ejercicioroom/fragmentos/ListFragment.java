@@ -3,6 +3,7 @@ package com.example.ejercicioroom.fragmentos;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,16 +12,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ejercicioroom.adapter.ProductoAdapter;
+import com.example.ejercicioroom.adapter.ProductoListAdapter;
 import com.example.ejercicioroom.databinding.FragmentAddBinding;
 import com.example.ejercicioroom.databinding.FragmentListBinding;
 import com.example.ejercicioroom.model.Producto;
+import com.example.ejercicioroom.viewmodel.ProductoViewModel;
 
 import java.util.ArrayList;
 
 
 public class ListFragment extends Fragment {
     FragmentListBinding binding;
+    private ProductoViewModel viewModel;
     private RecyclerView recyclerView;
+    private ProductoListAdapter adapter;
 
 
 
@@ -30,14 +35,22 @@ public class ListFragment extends Fragment {
         binding = FragmentListBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        ArrayList<Producto> listadoProductos = (ArrayList<Producto>)
-                getArguments().getSerializable("listaProducto");
+        viewModel = new ViewModelProvider(this).get(ProductoViewModel.class);
+
+        //ArrayList<Producto> listadoProductos = (ArrayList<Producto>)
+         //       getArguments().getSerializable("listaProducto");
 
         recyclerView = binding.recycler;
 
-        ProductoAdapter adapter = new ProductoAdapter(listadoProductos);
+        adapter = new ProductoListAdapter(new ProductoListAdapter.ProductoDiff());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+
+        viewModel.selectAllProductos().observe(getViewLifecycleOwner(), productos ->{
+            adapter.submitList(productos);
+        } );
+
+        //ProductoAdapter adapter = new ProductoAdapter(listadoProductos);
 
 
 

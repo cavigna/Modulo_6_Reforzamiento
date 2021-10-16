@@ -3,6 +3,7 @@ package com.example.ejercicioroom.fragmentos;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
@@ -10,10 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.ejercicioroom.MainActivity;
 import com.example.ejercicioroom.R;
 import com.example.ejercicioroom.databinding.FragmentAddBinding;
 import com.example.ejercicioroom.model.Producto;
+import com.example.ejercicioroom.model.ProductoEntity;
+import com.example.ejercicioroom.viewmodel.ProductoViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
@@ -24,6 +29,9 @@ public class AddFragment extends Fragment {
     private Button boton;
     private Producto producto = new Producto();
     static ArrayList<Producto> listaProducto = new ArrayList<>();
+
+
+    private ProductoViewModel viewModel;
 //    private NavController navController;
 
 
@@ -33,6 +41,8 @@ public class AddFragment extends Fragment {
 
         binding = FragmentAddBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+
+        viewModel =  new ViewModelProvider(this).get(ProductoViewModel.class);
 
 
         boton =  binding.button;
@@ -64,7 +74,15 @@ public class AddFragment extends Fragment {
 
                 producto.setId(Integer.parseInt(id));
                 producto.setNombre(nombre);
+                //producto.setMarca(nombre);
                 producto.setPrecio(Integer.parseInt(precio));
+
+                ProductoEntity productoEntity = new ProductoEntity(
+                        nombre,marca, Integer.parseInt(precio)
+                );
+                viewModel.agregarProducto(productoEntity);
+
+                Toast.makeText(getContext(), "Producto Agregado", Toast.LENGTH_SHORT).show();
 
 
                 listaProducto.add(producto);
@@ -75,6 +93,9 @@ public class AddFragment extends Fragment {
 
                // NavDirections action = AddFragmentDirections.actionAddFragmentToListFragment();
                 Navigation.findNavController(view).navigate(R.id.action_addFragment_to_listFragment, bundle);
+            }
+            else{
+                Navigation.findNavController(view).navigate(R.id.action_addFragment_to_listFragment);
             }
         });
         return view;

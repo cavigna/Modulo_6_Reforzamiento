@@ -21,7 +21,12 @@ public class ProductoViewModel extends AndroidViewModel {
         super(application);
 
         repository = new ProductoRepository(application);
+        allProductos = repository.selectAllProductos();
 
+     }
+
+     public void agregarProducto(ProductoEntity productoEntity){
+        repository.agregarProducto(productoEntity);
      }
 
     public LiveData<List<ProductoEntity>> selectAllProductos() {
