@@ -49,37 +49,13 @@ public class ListFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
 
-//        adapter.getCardView().setOnClickListener(view1 ->
-//        {
-//            viewModel.getCurrentProduct().postValue(adapter.getProductoEntity());
-//            Navigation.findNavController(view).navigate(R.id.detailsFragment);
-//
-//        });
 
-        adapter.setListener(productoEntity -> {
-
-
-            viewModel.getCurrentProduct().postValue(adapter.getProductoEntity());
-            Log.i("prueba", productoEntity.getMarca().toString());
-            //Navigation.findNavController(view).navigate(R.id.detailsFragment);
-        });
 
         viewModel.selectAllProductos().observe(getViewLifecycleOwner(), productos ->{
             adapter.submitList(productos);
         } );
 
-//viewModel.getCurrentProduct().setValue(adapter.getItemId(position));
 
-//        recyclerView.addOnItemTouchListener(l->{
-//
-//        });
-
-//        viewModel.setCurrentProduct(
-//
-//                MutableLiveData<adapter.getCurrentProduct()>);
-        //binding.recycler.findViewHolderForAdapterPosition()
-
-        //ProductoAdapter adapter = new ProductoAdapter(listadoProductos);
 
 
 

@@ -36,7 +36,7 @@ public class ProductoListAdapter extends ListAdapter<ProductoEntity, CustomViewH
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         ProductoEntity producto = getItem(position);
         holder.unirDatos(producto);
-        cardView = holder.getCardView();
+
         holder.binding.card.setOnClickListener(view -> {
             this.productoEntity = producto;
             NavDirections action = ListFragmentDirections.actionListFragmentToDetailsFragment(producto.getId());

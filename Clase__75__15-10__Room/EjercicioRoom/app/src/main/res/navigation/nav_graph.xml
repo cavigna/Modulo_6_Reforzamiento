@@ -37,4 +37,18 @@
         android:name="com.example.ejercicioroom.fragmentos.AddMarcaFragment"
         android:label="fragment_add_marca"
         tools:layout="@layout/fragment_add_marca" />
+    <fragment
+        android:id="@+id/buscarFragment"
+        android:name="com.example.ejercicioroom.fragmentos.BuscarFragment"
+        android:label="fragment_buscar"
+        tools:layout="@layout/fragment_buscar" >
+        <action
+            android:id="@+id/action_buscarFragment_to_resultadoFragment"
+            app:destination="@id/resultadoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoFragment"
+        android:name="com.example.ejercicioroom.fragmentos.ResultadoFragment"
+        android:label="fragment_resultado"
+        tools:layout="@layout/fragment_resultado" />
 </navigation>

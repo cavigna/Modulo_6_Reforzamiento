@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:gravity="center"
-        android:text="Agregar Marca"
+        android:text="Buscar Producto"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="68dp"
-        android:text="Agregar"
+        android:text="Buscar"
         android:textColor="#F06292"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"

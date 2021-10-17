@@ -1,6 +1,7 @@
 package com.example.ejercicioroom;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.ejercicioroom.databinding.ActivityMainBinding;
+import com.example.ejercicioroom.viewmodel.ProductoViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     NavController navController;
     BottomNavigationView bottomNav;
+    ProductoViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         bottomNav = binding.bottomNav;
+        viewModel = new ViewModelProvider(this).get(ProductoViewModel.class);
 
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
@@ -44,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
                 case (R.id.go_to_addMarcaFragment):
                     navController.navigate(R.id.addMarcaFragment);
+                    break;
+
+                case (R.id.go_to_searchFragment):
+                    navController.navigate(R.id.buscarFragment);
                     break;
 
             }
