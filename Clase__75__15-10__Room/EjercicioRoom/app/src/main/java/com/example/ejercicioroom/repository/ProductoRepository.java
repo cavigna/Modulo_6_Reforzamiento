@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.ejercicioroom.dao.ProductoDao;
 import com.example.ejercicioroom.db.BaseDeDatos;
+import com.example.ejercicioroom.model.MarcaEntity;
 import com.example.ejercicioroom.model.Producto;
 import com.example.ejercicioroom.model.ProductoEntity;
 
@@ -14,12 +15,15 @@ import java.util.List;
 public class ProductoRepository {
     private ProductoDao productoDao;
     private LiveData<List<ProductoEntity>> selectAllProductos;
+    private int id;
+    private LiveData<ProductoEntity> productoById;
+
 
     public ProductoRepository(Application application) {
 
         BaseDeDatos baseDeDatos = BaseDeDatos.getDataBase(application);
         productoDao = baseDeDatos.productoDao();
-
+        productoById = productoDao.selectProductById(id);
         selectAllProductos = productoDao.selectAllProductos();
 
 
@@ -29,6 +33,13 @@ public class ProductoRepository {
         return selectAllProductos;
     }
 
+    public LiveData<ProductoEntity> getProductoById(int id) {
+        return productoById;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void agregarProducto(ProductoEntity productoEntity) {
         BaseDeDatos.databaseWriteExecutor.execute(() ->
@@ -40,5 +51,11 @@ public class ProductoRepository {
         BaseDeDatos.databaseWriteExecutor.execute(() ->
                 productoDao.elminarProducto(productoEntity)
         );
+    }
+
+    public void agregarMarca(MarcaEntity marca){
+        BaseDeDatos.databaseWriteExecutor.execute(()->
+                productoDao.agregarMarca(marca)
+                );
     }
 }

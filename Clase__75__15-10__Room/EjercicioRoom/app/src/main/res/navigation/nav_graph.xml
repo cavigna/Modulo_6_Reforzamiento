@@ -32,4 +32,9 @@
             android:name="producto"
             app:argType="com.example.ejercicioroom.model.Producto" />
     </fragment>
+    <fragment
+        android:id="@+id/addMarcaFragment"
+        android:name="com.example.ejercicioroom.fragmentos.AddMarcaFragment"
+        android:label="fragment_add_marca"
+        tools:layout="@layout/fragment_add_marca" />
 </navigation>

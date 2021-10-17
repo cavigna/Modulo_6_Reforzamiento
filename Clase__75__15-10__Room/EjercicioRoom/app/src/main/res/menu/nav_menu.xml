@@ -16,4 +16,14 @@
         android:icon="@drawable/ic_baseline_find_in_page_24"
         android:title="Buscar"/>
 
+    <item
+        android:id="@+id/go_to_addMarcaFragment"
+        android:icon="@drawable/ic_baseline_add_box_24"
+        android:title="Agregar"/>
+
+<!--    <item-->
+<!--        android:id="@+id/go_to_listMarcaFragment"-->
+<!--        android:icon="@drawable/ic_baseline_list_alt_24"-->
+<!--        android:title="Listado"/>-->
+
 </menu>

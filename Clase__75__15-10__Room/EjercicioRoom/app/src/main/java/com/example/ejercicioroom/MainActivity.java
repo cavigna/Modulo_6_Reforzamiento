@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                     navController.navigate(R.id.listFragment);
                     break;
 
+                case (R.id.go_to_addMarcaFragment):
+                    navController.navigate(R.id.addMarcaFragment);
+                    break;
+
             }
             return true;
 

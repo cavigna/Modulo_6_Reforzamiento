@@ -29,6 +29,9 @@ public interface ProductoDao {
     @Query("SELECT * FROM producto")
     LiveData<List<ProductoEntity>> selectAllProductos();
 
+    @Query("SELECT * FROM producto WHERE id = :id")
+    LiveData<ProductoEntity> selectProductById(int id);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void agregarMarca(MarcaEntity marcaEntity);
 
