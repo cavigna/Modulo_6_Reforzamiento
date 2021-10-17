@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.navigation.Navigation;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ejercicioroom.R;
 import com.example.ejercicioroom.databinding.ItemRowBinding;
 import com.example.ejercicioroom.model.ProductoEntity;
-import com.example.ejercicioroom.viewmodel.ProductoViewModel;
+
 
 import java.text.NumberFormat;
 
@@ -34,9 +34,7 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
         tvPrecioRow = binding.tvPrecioRow;
         cardView = binding.card;
 
-//        cardView.setOnClickListener(l->{
-//            Navigation.findNavController(itemView).navigate(R.id.detailsFragment);
-//        });
+
 
 
     }
@@ -56,9 +54,6 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
         tvMarca.setText(marca);
         tvPrecioRow.setText(String.valueOf(precio));
 
-//        cardView.setOnClickListener(l->{
-//
-//        });
     }
 
 

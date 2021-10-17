@@ -34,11 +34,15 @@ public class ProductoRepository {
     }
 
     public LiveData<ProductoEntity> getProductoById(int id) {
-        return productoById;
+        return productoDao.selectProductById(id);
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void agregarProducto(ProductoEntity productoEntity) {

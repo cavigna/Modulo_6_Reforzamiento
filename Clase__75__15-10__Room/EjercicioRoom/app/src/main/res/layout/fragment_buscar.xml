@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragmentos.AddMarcaFragment">
+    tools:context=".fragmentos.BuscarFragment">
 
     <TextView
         android:id="@+id/tvBuscar"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="1dp"
         android:gravity="center"
         android:text="Agregar Marca"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -26,10 +24,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:visibility="gone"
+        android:layout_marginTop="108dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBuscar">
 
@@ -49,13 +47,11 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="56dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBuscar">
+        app:layout_constraintTop_toBottomOf="@+id/tiid">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etnombre"
@@ -75,8 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="88dp"
-
+        android:layout_marginTop="68dp"
         android:text="Agregar"
         android:textColor="#F06292"
         android:textSize="34sp"
@@ -84,6 +79,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tinombre" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

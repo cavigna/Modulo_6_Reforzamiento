@@ -23,14 +23,19 @@ public class DetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentDetailsBinding.inflate(inflater, container, false);
 
-       // com.example.ejercicioroom.model.Producto producto = DetailsFragmentArgs.fromBundle(getArguments()).getProducto();
+        int id = DetailsFragmentArgs.fromBundle(getArguments()).getIdProducto();
 
         viewModel = new ViewModelProvider(this).get(ProductoViewModel.class);
-        ProductoEntity producto = viewModel.getCurrentProduct().getValue();
+
+        viewModel.getProductoById(id).observe(getViewLifecycleOwner(), productoEntity -> {
+            binding.tvNombre.setText(productoEntity.getModelo());
+            binding.tvPrecio.setText("$" + productoEntity.getPrecio());
+        });
+//        ProductoEntity producto = viewModel.getCurrentProduct().getValue();
 
         //Log.i("prueba", producto.getMarca().toString());
 //
-        binding.tvNombre.setText(producto.getModelo());
+     //   binding.tvNombre.setText(producto.getModelo());
 //
 //        binding.tvPrecio.setText("$" + producto.getPrecio());
 

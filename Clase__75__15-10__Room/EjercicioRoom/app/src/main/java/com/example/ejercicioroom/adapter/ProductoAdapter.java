@@ -44,7 +44,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyView
 //            Bundle bundle = new Bundle();
 //            bundle.putSerializable("producto", producto);
 
-            NavDirections action = ListFragmentDirections.actionListFragmentToDetailsFragment(producto);
+            NavDirections action = ListFragmentDirections.actionListFragmentToDetailsFragment(producto.getId());
 
 
             Navigation.findNavController(view).navigate(action);

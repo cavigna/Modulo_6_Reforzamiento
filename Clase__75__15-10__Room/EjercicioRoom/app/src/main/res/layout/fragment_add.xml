@@ -7,7 +7,7 @@
     tools:context=".fragmentos.AddFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvBuscar"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/tvBuscar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etid"

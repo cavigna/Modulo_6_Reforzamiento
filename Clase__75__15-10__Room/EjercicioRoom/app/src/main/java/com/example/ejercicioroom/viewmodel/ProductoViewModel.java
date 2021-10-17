@@ -32,12 +32,16 @@ public class ProductoViewModel extends AndroidViewModel {
         allProductos = repository.selectAllProductos();
         productoById = repository.getProductoById(id);
         //currentProduct = (MutableLiveData<ProductoEntity>) repository.getProductoById(1);
-        currentProduct = new MutableLiveData<>();
+        //currentProduct = (MutableLiveData<ProductoEntity>) productoById;
 
 
      }
 
-     public void agregarProducto(ProductoEntity productoEntity){
+    public LiveData<ProductoEntity> getProductoById(int id) {
+        return repository.getProductoById(id);
+    }
+
+    public void agregarProducto(ProductoEntity productoEntity){
         repository.agregarProducto(productoEntity);
      }
 
@@ -52,6 +56,9 @@ public class ProductoViewModel extends AndroidViewModel {
 
 
 
+    public void setCurrentProduct(int id) {
+        this.currentProduct = (MutableLiveData<ProductoEntity>) repository.getProductoById(id);
+    }
 
     public MutableLiveData<ProductoEntity> getCurrentProduct() {
         return currentProduct;
