@@ -36,15 +36,31 @@ public class ResultadoFragment extends Fragment {
         Log.i("prueba", String.valueOf(viewModel.getId()));
 
         viewModel.getProductoById(viewModel.getId()).observe(getViewLifecycleOwner(), p -> {
-
-
-            tvId.setText(String.valueOf(p.getId()));
-            tvModelo.setText(p.getModelo());
-            tvMarca.setText(p.getMarca());
-            tvPrecio.setText(String.valueOf(p.getPrecio()));
+            if(p == null){
+                ocultarElemntos();
+            }else {
+                tvId.setText(String.valueOf(p.getId()));
+                tvModelo.setText(p.getModelo());
+                tvMarca.setText(p.getMarca());
+                tvPrecio.setText(String.valueOf(p.getPrecio()));
+            }
         });
         return view;
     }
 
+    public void ocultarElemntos(){
 
+        tvId.setVisibility(View.INVISIBLE);
+        tvModelo.setVisibility(View.INVISIBLE);
+        tvMarca.setVisibility(View.INVISIBLE);
+        tvPrecio.setVisibility(View.INVISIBLE);
+
+        binding.textView2.setVisibility(View.INVISIBLE);
+        binding.textView3.setVisibility(View.INVISIBLE);
+        binding.textView4.setVisibility(View.INVISIBLE);
+        binding.textView.setVisibility(View.INVISIBLE);
+
+        binding.tvSinRes.setVisibility(View.VISIBLE);
+
+    }
 }

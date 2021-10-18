@@ -17,6 +17,7 @@ import java.util.List;
 public class ProductoViewModel extends AndroidViewModel {
     private ProductoRepository repository;
     private  LiveData<List<ProductoEntity>> allProductos;
+    private LiveData<List<MarcaEntity>> allMarcas;
     private int id;
     private LiveData<ProductoEntity> productoById;
     private LiveData<ProductoEntity> productoById2;
@@ -32,8 +33,10 @@ public class ProductoViewModel extends AndroidViewModel {
         repository = new ProductoRepository(application);
         allProductos = repository.selectAllProductos();
         this.productoById = repository.getProductoById(id);
-        this.productoById2 = repository.getProductoById(
-                repository.getId()
+        this.allMarcas = repository.selectAllMarcas();
+
+        this.productoById2 = repository.getProductoById(repository.getId()
+
 
         );
 //        currentProduct = (MutableLiveData<ProductoEntity>) repository.getProductoById(1);
@@ -54,10 +57,15 @@ public class ProductoViewModel extends AndroidViewModel {
         repository.agregarProducto(productoEntity);
      }
 
+
+
     public LiveData<List<ProductoEntity>> selectAllProductos() {
         return allProductos;
     }
 
+    public LiveData<List<MarcaEntity>>  getAllMarcas() {
+        return allMarcas;
+    }
 
     public void agregarMarca(MarcaEntity marca){
         repository.agregarMarca(marca);

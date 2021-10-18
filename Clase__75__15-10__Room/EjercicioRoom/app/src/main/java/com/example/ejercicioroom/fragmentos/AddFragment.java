@@ -10,6 +10,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ public class AddFragment extends Fragment {
     private Button boton;
     private Producto producto = new Producto();
     static ArrayList<Producto> listaProducto = new ArrayList<>();
+    private ArrayList<String> listadoMarcas= new ArrayList<>();
+
 
 
     private ProductoViewModel viewModel;
@@ -52,6 +55,8 @@ public class AddFragment extends Fragment {
         ilMarca =  binding.timarca;
 
 
+
+
         boton.setOnClickListener(view1 -> {
 
             String id = ilID.getEditText().getText().toString();
@@ -62,11 +67,12 @@ public class AddFragment extends Fragment {
 
             /*
             if(id.isEmpty()) ilID.setError("Debe Ingresar un ID");
+
+            */
+
             if (nombre.isEmpty()) ilNombre.setError("Debe Ingresar un Modelo");
             if (marca.isEmpty()) ilMarca.setError("Debe Ingresar una Marca");
             if (precio.isEmpty()) ilPrecio.setError("Debe Ingresar un Precio");
-            */
-
 
 
 
@@ -85,19 +91,16 @@ public class AddFragment extends Fragment {
                 Toast.makeText(getContext(), "Producto Agregado", Toast.LENGTH_SHORT).show();
 
 
-                listaProducto.add(producto);
-
-
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("listaProducto", listaProducto);
-
                // NavDirections action = AddFragmentDirections.actionAddFragmentToListFragment();
-                Navigation.findNavController(view).navigate(R.id.action_addFragment_to_listFragment, bundle);
+                Navigation.findNavController(view).navigate(R.id.action_addFragment_to_listFragment);
             }
             else{
                 Navigation.findNavController(view).navigate(R.id.action_addFragment_to_listFragment);
             }
         });
+
+
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),                android.R., listadoMarcas);
         return view;
 
         /*

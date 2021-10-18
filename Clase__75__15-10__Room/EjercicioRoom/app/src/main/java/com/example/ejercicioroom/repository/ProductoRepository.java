@@ -15,6 +15,7 @@ import java.util.List;
 public class ProductoRepository {
     private ProductoDao productoDao;
     private LiveData<List<ProductoEntity>> selectAllProductos;
+    private LiveData<List<MarcaEntity>> selectAllMarcas;
     private int id;
     private LiveData<ProductoEntity> productoById;
 
@@ -25,8 +26,13 @@ public class ProductoRepository {
         productoDao = baseDeDatos.productoDao();
         productoById = productoDao.selectProductById(id);
         selectAllProductos = productoDao.selectAllProductos();
+        selectAllMarcas = productoDao.selectAllMarcas();
 
 
+    }
+
+    public LiveData<List<MarcaEntity>> selectAllMarcas() {
+        return selectAllMarcas;
     }
 
     public LiveData<List<ProductoEntity>> selectAllProductos() {
