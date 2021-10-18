@@ -49,9 +49,9 @@ public class BuscarFragment extends Fragment {
 
             else{
                 viewModel.setId(Integer.parseInt(id));
-                viewModel.getProductoById2();
 
-                Log.i("prueba", String.valueOf(viewModel.getId()));
+
+
                 NavDirections action = BuscarFragmentDirections.actionBuscarFragmentToResultadoFragment();
                 Navigation.findNavController(view).navigate(action);
 

@@ -31,15 +31,6 @@ public class DetailsFragment extends Fragment {
             binding.tvNombre.setText(productoEntity.getModelo());
             binding.tvPrecio.setText("$" + productoEntity.getPrecio());
         });
-//        ProductoEntity producto = viewModel.getCurrentProduct().getValue();
-
-        //Log.i("prueba", producto.getMarca().toString());
-//
-     //   binding.tvNombre.setText(producto.getModelo());
-//
-//        binding.tvPrecio.setText("$" + producto.getPrecio());
-
-
 
         return binding.getRoot();
     }

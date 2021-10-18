@@ -33,7 +33,6 @@ public class ResultadoFragment extends Fragment {
         tvPrecio = binding.tvPrecioR;
 
         viewModel = new ViewModelProvider(requireActivity()).get(ProductoViewModel.class);
-        Log.i("prueba", String.valueOf(viewModel.getId()));
 
         viewModel.getProductoById(viewModel.getId()).observe(getViewLifecycleOwner(), p -> {
             if(p == null){

@@ -20,11 +20,7 @@ public class ProductoListAdapter extends ListAdapter<ProductoEntity, CustomViewH
 
     private RecyclerViewOnItemClickListener listener;
     private ProductoEntity productoEntity;
-    private CardView cardView;
 
-    public CardView getCardView() {
-        return cardView;
-    }
 
     @NonNull
     @Override
@@ -41,9 +37,7 @@ public class ProductoListAdapter extends ListAdapter<ProductoEntity, CustomViewH
             this.productoEntity = producto;
             NavDirections action = ListFragmentDirections.actionListFragmentToDetailsFragment(producto.getId());
             Navigation.findNavController(view).navigate(action);
-
         });
-
 
     }
 
@@ -74,9 +68,7 @@ public class ProductoListAdapter extends ListAdapter<ProductoEntity, CustomViewH
         }
     }
 
-    public ProductoEntity getProductoEntity() {
-        return productoEntity;
-    }
+
 
     public interface  RecyclerViewOnItemClickListener {
 

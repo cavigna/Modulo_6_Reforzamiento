@@ -28,14 +28,10 @@ public class AddFragment extends Fragment {
     FragmentAddBinding binding;
     private TextInputLayout ilID, ilNombre, ilMarca, ilPrecio;
     private Button boton;
-    private Producto producto = new Producto();
-    static ArrayList<Producto> listaProducto = new ArrayList<>();
+
     private ArrayList<String> listadoMarcas= new ArrayList<>();
-
-
-
     private ProductoViewModel viewModel;
-//    private NavController navController;
+
 
 
     @Override
@@ -64,24 +60,11 @@ public class AddFragment extends Fragment {
             String marca = ilMarca.getEditText().getText().toString();
             String precio = ilPrecio.getEditText().getText().toString();
 
-
-            /*
-            if(id.isEmpty()) ilID.setError("Debe Ingresar un ID");
-
-            */
-
             if (nombre.isEmpty()) ilNombre.setError("Debe Ingresar un Modelo");
             if (marca.isEmpty()) ilMarca.setError("Debe Ingresar una Marca");
             if (precio.isEmpty()) ilPrecio.setError("Debe Ingresar un Precio");
 
-
-
-            if(!id.isEmpty() && !nombre.isEmpty() && !precio.isEmpty()) {
-
-                producto.setId(Integer.parseInt(id));
-                producto.setNombre(nombre);
-                //producto.setMarca(nombre);
-                producto.setPrecio(Integer.parseInt(precio));
+            if(!nombre.isEmpty() && !precio.isEmpty() && !marca.isEmpty()) {
 
                 ProductoEntity productoEntity = new ProductoEntity(
                         nombre,marca, Integer.parseInt(precio)
@@ -94,24 +77,13 @@ public class AddFragment extends Fragment {
                // NavDirections action = AddFragmentDirections.actionAddFragmentToListFragment();
                 Navigation.findNavController(view).navigate(R.id.action_addFragment_to_listFragment);
             }
-            else{
-                Navigation.findNavController(view).navigate(R.id.action_addFragment_to_listFragment);
-            }
+
         });
 
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),                android.R., listadoMarcas);
+
         return view;
 
-        /*
-        if (!ilID.getEditText().getText().toString().isEmpty() &&
-                !ilNombre.getEditText().getText().toString().isEmpty() &&
-                !ilPrecio.getEditText().getText().toString().isEmpty() ){
-
-        }
-
-
-         */
 
 
     }

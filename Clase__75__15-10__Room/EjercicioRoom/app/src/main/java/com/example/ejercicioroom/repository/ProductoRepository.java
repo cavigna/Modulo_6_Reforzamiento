@@ -43,6 +43,10 @@ public class ProductoRepository {
         return productoDao.selectProductById(id);
     }
 
+    public LiveData<ProductoEntity> getProductoById() {
+        return productoById;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
