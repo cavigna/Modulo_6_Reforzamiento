@@ -33,10 +33,6 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
         tvMarca = binding.tvMarca;
         tvPrecioRow = binding.tvPrecioRow;
         cardView = binding.card;
-
-
-
-
     }
 
 
