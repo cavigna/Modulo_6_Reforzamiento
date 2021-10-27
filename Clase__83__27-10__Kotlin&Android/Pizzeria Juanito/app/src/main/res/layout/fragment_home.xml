@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ui.HomeFragment">
+
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="2dp"
+        android:gravity="center"
+        android:text="@string/titulo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNombre"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pista_nombre" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilNombre">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/rbSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingEnd="2dp"
+            android:text="@string/small"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingEnd="2dp"
+            android:text="@string/medium"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbXl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingEnd="2dp"
+            android:text="@string/large"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="383dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/boton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+        <CheckBox
+            android:id="@+id/cbCarne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/carne" />
+
+        <CheckBox
+            android:id="@+id/cbPeperoni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pepe" />
+
+        <CheckBox
+            android:id="@+id/cbTocino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tocino" />
+
+        <CheckBox
+            android:id="@+id/cbChoclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choclo" />
+
+        <CheckBox
+            android:id="@+id/cbChamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/champ" />
+
+        <CheckBox
+            android:id="@+id/cbTomate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tomate" />
+
+        <CheckBox
+            android:id="@+id/cbAceituna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aceituna" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:text="@string/btn_aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
