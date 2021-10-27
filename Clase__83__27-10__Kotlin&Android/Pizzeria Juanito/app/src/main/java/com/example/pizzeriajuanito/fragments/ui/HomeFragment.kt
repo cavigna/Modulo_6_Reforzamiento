@@ -1,14 +1,17 @@
 package com.example.pizzeriajuanito.fragments.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.RadioButton
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.pizzeriajuanito.R
@@ -46,11 +49,6 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         hacerBinding()
-//
-//        val editText = textInputLayout.editText as TextInputEditText
-//        editText.text
-
-
 
 
         boton.setOnClickListener{
@@ -59,7 +57,7 @@ class HomeFragment : Fragment() {
             Log.i("pizzeria", pizza.toString() )
 
             viewModel.pizza = pizza
-            //viewModel.pizza.cliente = txt
+
             findNavController().navigate(R.id.detailsFragment)
         }
 

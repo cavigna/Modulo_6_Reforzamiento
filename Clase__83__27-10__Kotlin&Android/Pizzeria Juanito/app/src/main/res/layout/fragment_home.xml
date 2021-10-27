@@ -11,7 +11,7 @@
         android:id="@+id/tvTitulo"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:gravity="center"
         android:text="@string/titulo"
@@ -80,69 +80,79 @@
     </RadioGroup>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="383dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="1dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/boton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.0">
 
         <CheckBox
             android:id="@+id/cbCarne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/carne" />
+            android:text="@string/carne"
+            android:textSize="12sp" />
 
         <CheckBox
             android:id="@+id/cbPeperoni"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pepe" />
+            android:text="@string/pepe"
+            android:textSize="12sp" />
 
         <CheckBox
             android:id="@+id/cbTocino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tocino" />
+            android:text="@string/tocino"
+            android:textSize="12sp" />
 
         <CheckBox
             android:id="@+id/cbChoclo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/choclo" />
+            android:text="@string/choclo"
+            android:textSize="12sp" />
 
         <CheckBox
             android:id="@+id/cbChamp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/champ" />
+            android:text="@string/champ"
+            android:textSize="12sp" />
 
         <CheckBox
             android:id="@+id/cbTomate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tomate" />
+            android:text="@string/tomate"
+            android:textSize="12sp" />
 
         <CheckBox
             android:id="@+id/cbAceituna"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/aceituna" />
+            android:text="@string/aceituna"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/boton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="84dp"
         android:text="@string/btn_aceptar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.906" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
