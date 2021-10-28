@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Curso_Android/Modulo_6_Reforzamiento/Clase__84__28-10__Recycler&amp;ViewModel/ContactosApp/app/src/main/res/layout/activity_main.xml" value="0.49375" />
+        <entry key="..\:/Curso_Android/Modulo_6_Reforzamiento/Clase__84__28-10__Recycler&amp;ViewModel/ContactosApp/app/src/main/res/layout/fragment_home.xml" value="0.5223958333333333" />
+        <entry key="..\:/Curso_Android/Modulo_6_Reforzamiento/Clase__84__28-10__Recycler&amp;ViewModel/ContactosApp/app/src/main/res/layout/fragment_list.xml" value="0.540625" />
+        <entry key="..\:/Curso_Android/Modulo_6_Reforzamiento/Clase__84__28-10__Recycler&amp;ViewModel/ContactosApp/app/src/main/res/layout/item_row.xml" value="0.5301327885597549" />
+        <entry key="..\:/Curso_Android/Modulo_6_Reforzamiento/Clase__84__28-10__Recycler&amp;ViewModel/ContactosApp/app/src/main/res/menu/menu_contacto.xml" value="0.3351851851851852" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
