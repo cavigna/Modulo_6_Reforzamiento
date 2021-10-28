@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Pizzeria Juanito</string>
+
+    <string name="titulo">Pizerría Juanito</string>
+    <string name="pista_nombre">Ingrese su nombre</string>
+    <string name="small">Pequeña: $1500</string>
+    <string name="medium">Mediana: $3000</string>
+    <string name="large">Grande: $5000</string>
+    <string name="carne">Carne</string>
+    <string name="pepe">Peperoni</string>
+    <string name="tocino">Tocino</string>
+    <string name="champ">Champiñon</string>
+    <string name="tomate">Tomate</string>
+    <string name="choclo">Choclo</string>
+    <string name="aceituna">Aceituna</string>
+    <string name="btn_aceptar">Aceptar</string>
+
+
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
