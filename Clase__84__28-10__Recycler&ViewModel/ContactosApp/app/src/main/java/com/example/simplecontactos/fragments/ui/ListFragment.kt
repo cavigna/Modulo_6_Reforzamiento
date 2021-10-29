@@ -22,10 +22,10 @@ class ListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
        binding = FragmentListBinding.inflate(layoutInflater, container, false)
 
-        val adapter = ContactoAdapter()
+        val adapter = ContactoAdapter(requireActivity())
 
         with(binding){
             recycler.layoutManager = LinearLayoutManager(context)
@@ -33,9 +33,11 @@ class ListFragment : Fragment() {
 
         }
 
-        viewModel.listaContacto.observe(viewLifecycleOwner, Observer {
+        viewModel.listaContacto.observe(viewLifecycleOwner, {
             adapter.setContacto(it)
         })
+
+
 
 
         return binding.root

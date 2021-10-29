@@ -9,8 +9,11 @@ class ContactoViewModel() : ViewModel() {
 
     var listaContacto = MutableLiveData<ArrayList<Contacto>>()
 
+
+
     init {
         listaContacto.value = ArrayList()
+        listaContacto.value?.add(Contacto("juan", "+569988634475") )
     }
 
     fun onGuardar(nombre:String, numero:String){

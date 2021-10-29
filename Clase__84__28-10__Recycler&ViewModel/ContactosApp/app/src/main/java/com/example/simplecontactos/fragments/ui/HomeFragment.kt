@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.simplecontactos.R
@@ -19,13 +20,15 @@ import com.google.android.material.textfield.TextInputLayout
 
 
 class HomeFragment : Fragment() {
+
     private lateinit var binding: FragmentHomeBinding
+
     private val viewModel: ContactoViewModel by activityViewModels()
 
     private lateinit var tvNombre: TextInputLayout
     private lateinit var tvTel: TextInputLayout
     private lateinit var btnAgregar: Button
-    private lateinit var bottomNav: BottomNavigationView
+
 
 
     override fun onCreateView(
@@ -38,10 +41,9 @@ class HomeFragment : Fragment() {
             tvNombre = txNombre
             tvTel = txNumero
             btnAgregar = bAgregar
-            this@HomeFragment.bottomNav = bottomNav
+
 
         }
-
         btnAgregar.setOnClickListener {
             val nombre = tvNombre.editText?.text.toString()
             val tel = tvTel.editText?.text.toString()
@@ -49,18 +51,14 @@ class HomeFragment : Fragment() {
 
                 viewModel.onGuardar(nombre, tel)
 
-                findNavController().navigate(R.id.listFragment)
+                Toast.makeText(context, "Dale dale, esta agregado!", Toast.LENGTH_SHORT).show()
+
+            }else{
+                Toast.makeText(context, "Debe Completar todos los campos, Gil!!!", Toast.LENGTH_SHORT).show()
             }
 
 
         }
-
-//        bottomNav.setOnNavigationItemSelectedListener {
-//            when(it.itemId){
-//                R.id.menu_nombre -> findNavController().navigate(R.id.homeFragment)
-//            }
-//        }
-
         return binding.root
     }
 
