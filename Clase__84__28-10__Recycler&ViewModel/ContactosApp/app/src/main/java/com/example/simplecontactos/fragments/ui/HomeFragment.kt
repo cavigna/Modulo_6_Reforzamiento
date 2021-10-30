@@ -12,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.simplecontactos.R
 import com.example.simplecontactos.databinding.FragmentHomeBinding
+import com.example.simplecontactos.utils.hideKeyboard
 import com.example.simplecontactos.viewmodel.ContactoViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -44,6 +45,8 @@ class HomeFragment : Fragment() {
 
 
         }
+
+        hideKeyboard()
         btnAgregar.setOnClickListener {
             val nombre = tvNombre.editText?.text.toString()
             val tel = tvTel.editText?.text.toString()
