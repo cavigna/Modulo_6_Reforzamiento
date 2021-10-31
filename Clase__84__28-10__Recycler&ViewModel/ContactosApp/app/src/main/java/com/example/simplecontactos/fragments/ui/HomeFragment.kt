@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
         with(binding) {
@@ -48,8 +48,10 @@ class HomeFragment : Fragment() {
 
         hideKeyboard()
         btnAgregar.setOnClickListener {
+
             val nombre = tvNombre.editText?.text.toString()
             val tel = tvTel.editText?.text.toString()
+
             if (nombre.isNotEmpty() && tel.isNotEmpty()) {
 
                 viewModel.onGuardar(nombre, tel)
