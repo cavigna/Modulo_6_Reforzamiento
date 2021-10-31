@@ -31,9 +31,6 @@ class ContactoAdapter(var context: Context) : RecyclerView.Adapter<MyViewHolder>
             }
         }
 
-
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -48,7 +45,6 @@ class ContactoAdapter(var context: Context) : RecyclerView.Adapter<MyViewHolder>
         holder.imageButton.setOnClickListener {
            dialPhoneNumber(currentItem.numero, context)
         }
-
 
     }
 
