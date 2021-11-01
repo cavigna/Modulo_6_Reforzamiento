@@ -24,10 +24,9 @@ class ContactoAdapter(var context: Context) : RecyclerView.Adapter<MyViewHolder>
         val imageButton = binding.imageButton
         fun unirDatos(contacto: Contacto) {
             with(binding) {
+
                 tvNombreRow.text = contacto.nombre
                 tvTelRow.text = contacto.numero
-
-
             }
         }
 
