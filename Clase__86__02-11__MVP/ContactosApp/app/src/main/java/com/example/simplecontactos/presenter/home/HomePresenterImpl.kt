@@ -1,6 +1,7 @@
 package com.example.simplecontactos.presenter.home
 
 import com.example.simplecontactos.controller.ContactoController
+import com.example.simplecontactos.model.Contacto
 
 class HomePresenterImpl(var homeView: HomeView) : HomePresenter {
 
@@ -15,6 +16,10 @@ class HomePresenterImpl(var homeView: HomeView) : HomePresenter {
             homeView.mostrarError()
         }
 
+    }
+
+    override fun listarContactos(): MutableList<Contacto> {
+        return contactoController.listarContactos()
     }
 
 

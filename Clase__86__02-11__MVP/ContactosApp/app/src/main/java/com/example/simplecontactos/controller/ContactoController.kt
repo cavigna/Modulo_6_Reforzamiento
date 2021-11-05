@@ -18,4 +18,8 @@ class ContactoController {
 
 
     }
+
+    fun listarContactos():MutableList<Contacto>{
+        return contactoModel.listadoContacto
+    }
 }
