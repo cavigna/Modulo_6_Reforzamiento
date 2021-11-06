@@ -27,15 +27,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val respuesta = viewModel.data.asFlow().asLiveData()
-
-        respuesta.observe(this,  {
-            Log.i("respuesta", respuesta.value?.indicador?.get(0)?.valor.toString())
-            //Log.i("respuesta", respuesta.value.toString())
-        })
-
-
-//Log.i("respuesta", respuesta.toString())
 
     }
 }

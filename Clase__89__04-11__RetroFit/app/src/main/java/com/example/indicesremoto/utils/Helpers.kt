@@ -1,9 +1,12 @@
 package com.example.indicesremoto.utils
 
 import android.annotation.SuppressLint
+
 import android.icu.util.Calendar
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.roundToInt
 
 
 fun fromTimestamp(value: Long?): Date? {
@@ -24,6 +27,26 @@ fun dameLaFecha():String{
 
     return sdf.format(currentDate)
 }
+
+
+
+fun montoToCLP(monto: Double):String{
+    val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale("es", "CL"))
+    format.maximumFractionDigits = 0
+    //format.currency = Currency.getInstance( "CLP")
+
+    return format.format(monto.roundToInt())
+}
+
+/*
+fun Double.toRidePrice():String{
+    val format: NumberFormat = NumberFormat.getCurrencyInstance()
+    format.maximumFractionDigits = 0
+    format.currency = Currency.getInstance("NGN")
+
+    return format.format(this.roundToInt())
+}
+ */
 
 
 

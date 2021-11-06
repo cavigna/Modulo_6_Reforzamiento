@@ -12,16 +12,23 @@ import retrofit2.http.Path
 interface IndiceApi {
 
 
-    @GET("uf")
-    suspend fun listadoUf(): ResIndicador
+
 
     @GET("uf/{fecha}")
     suspend fun ufDeHoy(@Path("fecha") fecha: String): ResIndicador
 
     @GET("{indicador}/{fecha}")
     suspend fun indiceDeHoy(
-        @Path("indicador") indiacor: String,
+        @Path("indicador") indicador: String,
         @Path("fecha") fecha: String,
 
-        ) : ResIndicador
+        ): ResIndicador
+
+    @GET("{indicador}")
+    suspend fun listadoIndicador(@Path("indicador") indicador: String): ResIndicador
 }
+
+/*
+    @GET("uf")
+    suspend fun listadoUf(): ResIndicador
+ */
