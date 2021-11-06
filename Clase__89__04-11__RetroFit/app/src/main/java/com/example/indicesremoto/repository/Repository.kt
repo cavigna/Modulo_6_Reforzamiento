@@ -7,5 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 class Repository(private val api: IndiceApi) {
 
-    fun listadoUf() = api.listadoUf()
+    suspend fun listadoUf() = api.listadoUf()
+
+    suspend fun ufDeHoy(fecha:String) = api.ufDeHoy(fecha)
 }

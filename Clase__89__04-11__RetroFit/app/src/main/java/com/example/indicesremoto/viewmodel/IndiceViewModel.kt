@@ -1,33 +1,50 @@
 package com.example.indicesremoto.viewmodel
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
+import android.annotation.SuppressLint
+import android.icu.util.Calendar
+import androidx.lifecycle.*
+import com.example.indicesremoto.model.ResIndicador
 import com.example.indicesremoto.repository.Repository
+import com.example.indicesremoto.utils.dameLaFecha
+import com.example.indicesremoto.utils.fromTimestamp
+import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 
-class IndiceViewModel(repository: Repository): ViewModel() {
-    val listadoUf = repository.listadoUf().asLiveData()
-}
+@SuppressLint("NewApi")
+class IndiceViewModel(private val repository: Repository): ViewModel() {
 
+    var data  = MutableLiveData<ResIndicador>()
 
+    var ufHoyMutable = MutableLiveData<ResIndicador>()
 
-class IndiceFactory(private val repository: Repository) : ViewModelProvider.Factory{
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return IndiceViewModel(repository) as T
+    var hoy = ""
+
+    init{
+        listadoUf()
+        hoy = dameLaFecha()
+        ufDeHoy()
     }
 
-}
-
-/*
-class ConsumoViewModelFactory(private val repository: RepositoryConsumo) :
-    ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom((ConsumoViewModel::class.java))) {
-            return ConsumoViewModel(repository) as T
+    fun listadoUf(){
+        viewModelScope.launch {
+            data.postValue(repository.listadoUf())
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
     }
 
+    fun ufDeHoy(){
+        viewModelScope.launch {
+            ufHoyMutable.postValue( repository.ufDeHoy(hoy))
+        }
+    }
 
+    suspend fun uf2(): ResIndicador {
+        return repository.ufDeHoy(hoy)
+    }
 }
- */
+
+
+
+
+
+

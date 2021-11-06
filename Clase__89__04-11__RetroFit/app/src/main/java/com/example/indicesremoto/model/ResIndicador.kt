@@ -10,7 +10,7 @@ data class ResIndicador(
     var codigo: String = "",
     @SerializedName("nombre")
     var nombre: String = "",
-    @SerializedName("indicador")
+    @SerializedName("serie")
     var indicador: List<Indicador> = listOf(),
     @SerializedName("unidad_medida")
     var unidadMedida: String = "",
