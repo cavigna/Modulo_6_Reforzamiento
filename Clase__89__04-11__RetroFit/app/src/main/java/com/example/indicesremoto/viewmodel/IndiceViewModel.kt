@@ -5,6 +5,7 @@ import android.icu.util.Calendar
 import androidx.lifecycle.*
 import com.example.indicesremoto.model.ResIndicador
 import com.example.indicesremoto.repository.Repository
+import com.example.indicesremoto.utils.Utilidades.Companion.HOY
 import com.example.indicesremoto.utils.dameLaFecha
 import com.example.indicesremoto.utils.fromTimestamp
 import kotlinx.coroutines.launch
@@ -16,13 +17,14 @@ class IndiceViewModel(private val repository: Repository): ViewModel() {
 
     var data  = MutableLiveData<ResIndicador>()
 
-    var ufHoyMutable = MutableLiveData<ResIndicador>()
+    private val _ufHoy: MutableLiveData<ResIndicador> = MutableLiveData()
+    val ufHoy : LiveData<ResIndicador> = _ufHoy
 
-    var hoy = ""
+
 
     init{
         listadoUf()
-        hoy = dameLaFecha()
+
         ufDeHoy()
     }
 
@@ -34,13 +36,13 @@ class IndiceViewModel(private val repository: Repository): ViewModel() {
 
     fun ufDeHoy(){
         viewModelScope.launch {
-            ufHoyMutable.postValue( repository.ufDeHoy(hoy))
+            _ufHoy.postValue(repository.ufDeHoy(HOY))
         }
     }
-
-    suspend fun uf2(): ResIndicador {
-        return repository.ufDeHoy(hoy)
-    }
+//
+//     fun uf2(): LiveData<ResIndicador> {
+//        return repository.ufDeHoy(hoy).body()?.asLiveData()!!
+//    }
 }
 
 

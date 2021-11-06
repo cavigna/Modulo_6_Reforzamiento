@@ -56,12 +56,11 @@ class HomeFragment : Fragment() {
 
         Log.i("fecha", sdf.format(currentDate))
 
-        binding.tvMontoUf.text = viewModel.ufHoyMutable.value?.indicador?.get(0)?.valor.toString()
 
+        viewModel.ufHoy.observe(viewLifecycleOwner, {
+            binding.tvMontoUf.text = it.indicador[0].valor.toString()
+        })
 
-suspend {
-    Log.i("fecha2", viewModel.uf2().toString())
-}
 
 
         return binding.root
